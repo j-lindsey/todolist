@@ -1,0 +1,35 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.todoitems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.item{
+    display:flex;
+    align-items: center;
+    margin-top:10px;
+}
+
+.done {
+    margin-right: 10px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-decoration: none;
+}
+
+.completed {
+    text-decoration: line-through;
+}
