@@ -16,10 +16,12 @@ header {
     margin-top: 10px;
 }
 
-.item{
-    display:flex;
+.item {
+    width: 250px;
+    display: flex;
     align-items: center;
-    margin-top:10px;
+    padding: 5px;
+    border: 1px solid rgb(128, 126, 126);
 }
 
 .done {
@@ -32,4 +34,12 @@ header {
 
 .completed {
     text-decoration: line-through;
+}
+
+.remove {
+    background-color: white;
+    border: none;
+    color: crimson;
+    font-size: 15px;
+    margin-left: auto;
 }

@@ -6,7 +6,7 @@ let updateList = function () {
         dataType: 'json',
         success: function (response, textStatus) {
             response.tasks.forEach(function (item) {
-                $('.todos').append('<div class="item" id='+item.id+'><button class="done"></button><p>' + item.content + '</p></div>');
+                $('.todos').append('<div class="item" id='+item.id+'><button class="done"></button><p>' + item.content + '</p><button class="remove">&#10006</button></div>');
             })
 
         },
@@ -19,7 +19,8 @@ let updateList = function () {
 
 let addToDo = function () {
     let todo = $('.newtodo input').val();
-    $('.newtodo input').val() = "";
+    console.log(todo);
+    $('.newtodo input').val('');
     $.ajax({
         type: 'POST',
         url: 'https://altcademy-to-do-list-api.herokuapp.com/tasks?api_key=157',
@@ -69,10 +70,24 @@ let completeToDo = function (ele) {
             error: function (request, textStatus, errorMessage) {
               console.log(errorMessage);
             }
-          });
-           
+          });   
     }
-}
+};
+
+let removeToDo = function(ele){
+    let id = $(ele).parent().attr('id');
+    $.ajax({
+        type: 'DELETE',
+        url: 'https://altcademy-to-do-list-api.herokuapp.com/tasks/'+id+'?api_key=157',
+        success: function (response, textStatus) {
+          console.log(response);
+          $(ele).parent().remove();
+        },
+        error: function (request, textStatus, errorMessage) {
+          console.log(errorMessage);
+        }
+      });
+    };
 
 
 
@@ -84,8 +99,13 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.done', function () {
-        let button = $(this)
+        let button = $(this);
         completeToDo(button);
-    })
+    });
+
+    $(document).on('click', '.remove', function () {
+        let button = $(this);
+        removeToDo(button);
+    });
 
 });
