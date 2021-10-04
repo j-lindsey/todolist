@@ -1,6 +1,30 @@
 header {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
+}
+
+body {
+    font-family: 'Ephesis', cursive;
+    font-size: 25px;
+}
+
+
+.newtodo input {
+    height: 30px;
+    width: 300px;
+}
+
+.newtodo button {
+    background-color: rgb(53, 53, 179);
+    border: 1px solid rgb(53, 53, 179);
+    color: white;
+    padding: 10px;
+}
+
+.newtodo button:hover {
+    background-color: rgb(53, 53, 179, 0.6);
+    border: 1px solid rgb(53, 53, 179);
 }
 
 .todoitems {
@@ -13,15 +37,18 @@ header {
 .todos {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
 }
 
 .item {
-    width: 250px;
+    background-color:rgb(126, 126, 245);
+    width: 350px;
     display: flex;
     align-items: center;
     padding: 5px;
     border: 1px solid rgb(128, 126, 126);
+}
+.item p{
+    margin: 10px;
 }
 
 .done {
@@ -30,6 +57,9 @@ header {
     height: 30px;
     width: 30px;
     text-decoration: none;
+    background-color: white;
+    color: forestgreen;
+    font-weight: bold;
 }
 
 .completed {
@@ -37,9 +67,31 @@ header {
 }
 
 .remove {
-    background-color: white;
+    background-color: rgb(126, 126, 245);
     border: none;
     color: crimson;
     font-size: 15px;
     margin-left: auto;
+}
+
+.toggle{
+    color: white;
+    background-color:rgb(53, 53, 179);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgb(128, 126, 126);
+    margin: 15px 0px 0px 0px;
+    padding: 0px;
+}
+
+.toggle div {
+    padding: 0px 15px;
+}
+.active{
+    background-color:rgb(126, 126, 245);
+}
+
+.completedDiv{
+    background-color: rgb(53, 53, 179);
 }
