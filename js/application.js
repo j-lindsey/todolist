@@ -70,12 +70,16 @@ let addToDo = function () {
         }),
         success: function (response, textStatus) {
             console.log(response);
+            if(type === 'completedItems'){
+                type = 'allItems';
+                updateToggle($('.allItems'));
+            }
+            updateList(type);
         },
         error: function (request, textStatus, errorMessage) {
             console.log(errorMessage);
         }
     });
-    updateList(type);
 }
 
 let completeToDo = function (ele) {

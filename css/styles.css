@@ -40,6 +40,7 @@ body {
 }
 
 .item {
+    color: white;
     background-color:rgb(126, 126, 245);
     width: 350px;
     display: flex;
